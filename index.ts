@@ -83,6 +83,6 @@ app.post('/disconnect', async (req: Request, res: Response) => {
 })
 
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log('App listening to port 8080')
 })
