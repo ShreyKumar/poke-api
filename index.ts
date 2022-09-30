@@ -2,14 +2,14 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const { MongoClient } = require('mongodb')
+require('dotenv').config()
 
 import {Request, Response} from 'express'
 const app = express()
 app.use(cors())
 
 const jsonParser = bodyParser.json()
-
-const MONGO_CONNECTION_URI = 'mongodb+srv://shreyanshkumar:8809asAS@cluster0.ieg8mm3.mongodb.net/test'
+const MONGO_CONNECTION_URI = process.env.MONGO_CONNECTION_URL
 
 interface Pokemon {
   image_url: string,
